@@ -130,7 +130,6 @@ class User:
             }
         collection.insert_one(user)
         
-        #fs = gridfs.GridFS(db)
         return jsonify(user)    
 
 @app.route('/lostfacevideo')
@@ -162,16 +161,6 @@ def informlost():
 def thankyouu():
     User().report()
     return "Thankyou for reporting the missing person. We will get back to you soon!"
-
-    
-
-        #img_file=Request.form['fileToUpload']
-        #with open(request.form['fileToUpload'], "rb") as image_file:
-           # encoded_string = base64.b64encode(image_file.read())
-           # collection.insert_one({"filename":encoded_string})
-        #fs.put(contents,filename='img_file')
-
-
 
 
 
