@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>I found someone</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/findfaceicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/findfaceicon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <!--<link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet"> -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">  
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">  
+  <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet"> 
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet"> 
+  <link href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}" rel="stylesheet"> 
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+   
+  <!-- Template Main CSS File -->
+   <!-- <link href="{{ url_for('static', filename='css/properform.css') }}" rel="stylesheet"> -->
+  <link href="{{ url_for('static', filename= 'css/sample.css') }}" rel="stylesheet">
+</head>
+
+
+
+  <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center justify-content-center">
+        <div class="logo">
+          <h1 class="text-light"><a href="{{ url_for('home') }}"><span>Find Face</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <a href="{{ url_for('home')}}"><img src="{{ url_for('static', filename='assets/img/findfaceicon.png') }}" alt="" class="img-fluid"></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+         <!--   <li><a class="nav-link scrollto active" href="#about">Home</a></li> -->
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+             <li><a class="nav-link scrollto" href="#why-us">Why Find Face</a></li>
+            <li><a class="nav-link scrollto" href="#services">Support</a></li>
+              </ul>
+            </li>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      </div>
+    </div>
+  </header>
+
+
+  <body>
+    <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+      <h2>Fill in the following details of the recovered person</h2>
+      <div class="row"> 
+          <div class="form-center">
+          <div class="col-lg-4" data-aos="fade-right">
+  <center><form  name ="informlost" id= "Lost" align="center" action="reportedperson" method="POST" role="form" class="php-email-form mt-4" >
+      <div class="row">
+     <div class="col-md-6 form-group"> 
+        <span class="details">Full Name</span>
+      <input type="text" name="name" class="form-control" id="name" placeholder="Full name" required>
+      </div>
+      <div class="col-md-6 form-group mt-3 mt-md-0">
+        <span class="details">Age</span>
+      <input type="text" class="form-control" name="age" id="age" placeholder="Age" required>
+      </div>
+      <div class="col-md-6 form-group mt-3 mt-md-0">
+        <span class="details">Current location</span>
+      <input type="text" class="form-control" name="Location" id="Location" placeholder="Location" required>
+      </div>
+      <div class="col-md-6 form-group mt-3 mt-md-0">
+        <span class="details">Your contact</span>
+      <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact" required>
+      </div>
+      <div class="text-center"><span class="details">Upload image of the recovered person</span>
+        <input align= "center" type="file" name="fileToUpload" id="fileToUpload" placeholder ="Upload image of lost person" required>
+        <input type="submit" value="Report" name="submit">
+      </div>
+      </div>
+  </form> </center>
+     
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</body>
+</html>
