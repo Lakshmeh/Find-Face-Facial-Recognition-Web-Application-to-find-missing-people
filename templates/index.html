@@ -1,1 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Find Face</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/findfaceicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='img/findfaceicon.png') }}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" >  
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" >  
+  <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet" > 
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet" > 
+  <link href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}" rel="stylesheet" > 
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet" >
+   
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" >
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container">
+      <div class="header-container d-flex align-items-center justify-content-center">
+        <div class="logo">
+          <h1 class="text-light"><a href="{{ url_for('home') }}"><span>Find Face</span></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="{{ url_for('home')}}"><img src="{{ url_for('static', filename='assets/img/findfaceicon.png') }}" alt="" class="img-fluid"></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+             <li><a class="nav-link scrollto" href="#why-us">Why Find Face</a></li>
+            <li><a class="nav-link scrollto" href="#services">Support</a></li>
+              </ul>
+            </li>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      </div>
+    </div>
+  </header>
+
+  
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+      <h1>Find someone you lost here</h1>
+      <h2>A platform for the lost and found people</h2>
+      <a href="{{ url_for('inform') }}" class="btn-get-started scrollto">I lost someone</a>
+      <a href="{{ url_for('informfound') }}" class="btn-get-started scrollto">I found someone</a>
+    </div>
+  </section>
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+            <h2>Get help here</h2>
+            <h3>If you lost a loved one or found a lost person</h3>
+          </div> 
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+            <p><div align="left">
+              This website is a common platform for lost people and for their guardians and relatives. You will be able to :
+            </p></div>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Report a missing person along with their images</li>
+              <li><i class="ri-check-double-line"></i> Report a recovered person using real-time face recognition</li>
+              <li><i class="ri-check-double-line"></i> Contact the missing person's family</li>
+            </ul>
+            <p class="fst-italic">
+              Children and senior citizens are the most susceptible to getting lost, and it is our responsibility, as individuals to make the most out of technology to join hands and help whenever possible.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <p>Reliable</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <p>Uses advanced technology</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <p>Efficient</p>
+          </div>
+          <div class="col-lg-3 col-6 text-center">
+            <p>Safe</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
+            <div class="content">
+              <h3>Why Find Face?</h3>
+              <p>
+                This website uses advanced face recognition technology to find missing people. It is a cross-platform where lost-and-found people can contact. You can find other relevant resources and helpline numbers for the same here. Alongside are some things to keep in mind while using this web application:
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Keep images of the missing person/recovered person handy</h4>
+                    <p>This web application is easy to use and user-friendly. All you have to do is just either show the missing person's photo through the webcam, if the web application is able to recognise the missing person correctly, the most recently updated data regarding their location and contacts can be retrieved.</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Prone to some inaccuracy</h4>
+                    <p>This web application is at its initial stages at the moment, so the face recognition technology is prone to inaccuracy due to small size of data base it contains.</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Be accurate while filling forms here</h4>
+                    <p>As someone who recovered a missing person, it is very important to be precise about their current location, along with accurate your accurate phone number.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container">
+
+        <div class="text-center" data-aos="zoom-in">
+          <h3>Call To Action</h3>
+          <p>This website puts advanced facial recognition technology to use. All you have to do is report if you lost or recovered someone. If you come accross anyone who appears lost and away from their family, please report about their details here. Sparing five minutes for something like this could save lives.</p>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+    
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="section-title" data-aos="fade-right">
+              <h2>Get more support</h2>
+              <p>Here are some necessary helpline numbers and resources you could refer </p>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row">
+              <div class="col-md-6 d-flex align-items-stretch">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                  <h4><a href="">Trackchild is a website portal wherein you can gain additional information and support</a></h4>
+                  <p><a href="https://trackthemissingchild.gov.in/trackchild/index.php">Click here</a></p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="icon"><i class="bx bx-file"></i></div>
+                  <h4><a href="">Childline for further support from the government</a></h4>
+                  <p><a href="https://vikaspedia.in/education/child-rights/childline-1098-service">Click here</a></p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="icon"><i class="bx bx-tachometer"></i></div>
+                  <h4><a href="">Complaint cell to file a complaint or seek child support</a></h4>
+                  <p><a href="https://bba.org.in/complaint-cell/">Click here</a></p>
+                </div>
+              </div>
+
+              <div class="col-md-6 d-flex align-items-stretch mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="icon"><i class="bx bx-world"></i></div>
+                  <h4><a href="">If you live in Delhi India, the below can help</a></h4>
+                  <p><a href="https://dcpcr.delhi.gov.in/dcpcr-helpline">Click here</a></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="align-items-center" >
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ url_for('home') }}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Support</a></li>
+               <li><i class="bx bx-chevron-right"></i> <a href="#why-us">Why Find Face</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="{{ url_for('home') }}" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
