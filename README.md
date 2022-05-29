@@ -49,6 +49,7 @@ To get started with the testing process of this web application, it is required 
 
 ```bash
   pip install -r requirements.txt
+  pip install dnspython
 ```
 
 **Step 4: Use a python IDE to implement code.py file.**
