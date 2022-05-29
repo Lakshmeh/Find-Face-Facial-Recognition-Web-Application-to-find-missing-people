@@ -4,27 +4,16 @@ import numpy as np
 import face_recognition
 import pymongo
 from pymongo import MongoClient
-#import json
 from bson import json_util
 import uuid
-#import gridfs
-#import base64
+import dns
+
 
 app = Flask(__name__)
 
 cluster = MongoClient("mongodb+srv://Laksh:Laksh02@cluster0.uzz3c.mongodb.net/?retryWrites=true&w=majority")
 db = cluster["FindFace"]
 collection = db["Faces"]
-
-known_face_names=[]
-known_face_encodings=[]
-
-for detail in collection.find({'filename':{ "$exists" :True } }):
-    imgfile = detail["filename"]
-    imgfile_encoding=face_recognition.face_encodings(imgfile)[0]
-    known_face_encodings.append(imgfile_encoding)
-    known_face_names.append(detail['name'])
-
 
         
 @app.route('/')
@@ -39,11 +28,10 @@ def inform():
     return render_template('face_recog.html')
 
 
-
+# Importing the images from my directory
 laksh_image = face_recognition.load_image_file("/Users/lakshmi/Desktop/lakshmi/laksh.jpg")
 laksh_face_encoding = face_recognition.face_encodings(laksh_image)[0]
 
-# Load a second sample picture and learn how to recognize it.
 mom_image = face_recognition.load_image_file("/Users/lakshmi/Desktop/lakshmi/mom.jpg")
 mom_face_encoding = face_recognition.face_encodings(mom_image)[0]
 
@@ -63,6 +51,7 @@ face_names = []
 name = "Unknown"
 process_this_frame = True
 
+# this function generates frames once the webcam is on
 def generate_frames():
     camera=cv.VideoCapture(0)
     while True:
@@ -96,7 +85,7 @@ def generate_frames():
                 
                 
                 
-            # Display the results
+            # Display the name of person if recognised
             for (top, right, bottom, left), name in zip(face_locations, face_names):
                 # Scale back up face locations since the frame we detected in was scaled to 1/4 size
                 top *= 4
@@ -115,29 +104,14 @@ def generate_frames():
             
                 ret,buffer=cv.imencode('.jpg',frame)
         
-                yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + bytearray(np.array(buffer)) + b'\r\n')
-        
-
-class User:
-    def report(self):
-        user={
-            "_id": uuid.uuid4().hex,
-            "name": request.form['name'],
-            "age": request.form['age'],
-            "Location": request.form['Location'],
-            "contact": request.form['contact'],
-            "fileToUpload" : request.form['fileToUpload']
-            }
-        collection.insert_one(user)
-        
-        return jsonify(user)    
+                yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + bytearray(np.array(buffer)) + b'\r\n')  
 
 @app.route('/lostfacevideo')
 
 def lostfacevideo():
-    return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(generate_frames(),mimetype='multipart/x-mixed-replace; boundary=frame') 
 
-
+# if the missing person has been recognised, the web app will display the most recent information regarding the whereabouts of the missing person
 @app.route('/i-lost-someone/person-found') 
 
 def person_found():
@@ -150,11 +124,26 @@ def person_found():
         
         return render_template('person_found.html', Name = name , age=age, location_last_found= location_last_found, contact= contact)
     
-
+# requesting data from the user after the form is filled
+class User:
+    def report(self):
+        user={
+            "_id": uuid.uuid4().hex,
+            "name": request.form['name'],
+            "age": request.form['age'],
+            "Location": request.form['Location'],
+            "contact": request.form['contact'],
+            "fileToUpload" : request.form['fileToUpload']
+            }
+        collection.insert_one(user)
+        
+        return jsonify(user) 
+    
+    
 @app.route('/i-lost-someone/report', methods=['GET', 'POST'])
 
 def informlost():
-    return render_template('informlost.html')
+    return render_template('informlost.html'). #asks the user to fill a form which includes details of the missing person 
 
 @app.route('/i-lost-someone/reportedlostperson', methods=['GET','POST'])
 
@@ -163,7 +152,7 @@ def thankyouu():
     return "Thankyou for reporting the missing person. We will get back to you soon!"
 
 
-
+# report if someone recovered a missing person
 @app.route('/i-found-someone', methods=['GET','POST'])
 
 def informfound():
