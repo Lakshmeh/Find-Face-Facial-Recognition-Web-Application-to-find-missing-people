@@ -51,8 +51,8 @@ To get started with the testing process of this web application, it is required 
   pip install -r requirements.txt
 ```
 
-**Step 4: Use a python IDE to implement code.py file**
+**Step 4: Use a python IDE to implement code.py file.**
 
-**Step 5: Hit (http://127.0.0.1:5000/) on any browser
+**Step 5: Hit (http://127.0.0.1:5000/) on any browser to see the web application working on your local system.**
 
  
