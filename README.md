@@ -27,9 +27,7 @@ This is made specially for children and senior citizens who are more vulnerable 
 - pymongo for python
 - uuid (to generate unique ids)
 - dnspython 
-## Documentation
 
-[Documentation](https://linktodocumentation)
 
 
 ## Get started on your local system
