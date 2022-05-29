@@ -60,6 +60,10 @@ To get started with the testing process of this web application, it is required 
 
 ```bash
   FLASK_APP = code.py flask run
+```
+or 
+```bash
+  venv FLASK_APP = code.py python -m flask run
 ```  
 
 **Step 5: Hit (http://127.0.0.1:5000/) on any browser to see the web application working on your local system.**
