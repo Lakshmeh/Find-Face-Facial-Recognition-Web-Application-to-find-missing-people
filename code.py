@@ -143,7 +143,7 @@ class User:
 @app.route('/i-lost-someone/report', methods=['GET', 'POST'])
 
 def informlost():
-    return render_template('informlost.html'). #asks the user to fill a form which includes details of the missing person 
+    return render_template('informlost.html')  #asks the user to fill a form which includes details of the missing person 
 
 @app.route('/i-lost-someone/reportedlostperson', methods=['GET','POST'])
 
