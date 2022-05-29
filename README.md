@@ -68,4 +68,9 @@ or
 
 **Step 5: Hit (http://127.0.0.1:5000/) on any browser to see the web application working on your local system.**
 
- 
+ ## Future Scope
+ I plan on including the following -
+ - Real time webcam frame capture using opencv to store image data.
+ - Provide the option for storing data of the same missing person again and again and provide the most recent information of the missing person
+ - Make face recognition possible from large distances
+ - Other functionalities to improve user experience
