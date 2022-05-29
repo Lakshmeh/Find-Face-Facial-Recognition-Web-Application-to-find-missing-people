@@ -2,6 +2,10 @@
 About the Project:
 **Find Face** is a Web Application which uses Face Recognition Technology to find missing people. It is a cross-platform for the missing people and their family. This web application is user-friendly and provides additional resources and helpline websites to users. As of now, Find Face has not been deployed yet, but will be soon.
 
+![Logo](https://github.com/Lakshmeh/Find-Face-Facial-Recognition-Web-Application-to-find-missing-people/blob/main/static/img/findfaceicon.png)
+
+
+
 This is made specially for children and senior citizens who are more vulnerable to such situations
 ## Features of this Web App
 - Contact the missing person's family using the power of facial recognition
