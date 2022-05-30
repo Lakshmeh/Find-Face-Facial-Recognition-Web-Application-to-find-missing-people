@@ -43,20 +43,14 @@ To get started with the testing process of this web application, it is required 
   git clone https://github.com/Lakshmeh/Find-Face-Facial-Recognition-Web-Application-to-find-missing-people
 ```
 
-**Step 2: Go to the project directory** (let's say my-project is your directory)
-
-```bash
-  cd my-project
-```
-
-**Step 3: Install dependencies** (just requirements.txt file)
+**Step 2: Install dependencies** (just requirements.txt file)
 
 ```bash
   pip install -r requirements.txt
   pip install dnspython
 ```
 
-**Step 4: Run code.py file as follows**
+**Step 3: Run code.py file as follows**
 
 ```bash
   FLASK_APP = code.py flask run
@@ -70,7 +64,7 @@ or
   python3 code.py
 ```  
 
-**Step 5: Hit (http://127.0.0.1:5000/) on any browser to see the web application working on your local system.**
+**Step 4: Hit (http://127.0.0.1:5000/) on any browser to see the web application working on your local system.**
 
  ## Future Scope
  I plan on including the following -
